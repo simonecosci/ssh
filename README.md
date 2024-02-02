@@ -38,7 +38,7 @@ $connection = SSH::into($id);
 // run a command
 $output = $connection->run('ls -la');
 
-// rum multiple commands
+// run multiple commands
 $output = $connection->run(['ls -la', 'pwd']);
 
 // upload a file

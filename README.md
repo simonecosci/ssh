@@ -45,7 +45,7 @@ $output = $connection->run(['ls -la', 'pwd']);
 $connection->putFile('test.txt');
 
 // create a file remotely
-$connection->putString('test.txt', 'content of the file);
+$connection->putString('test.txt', 'content of the file');
 
 ```
 

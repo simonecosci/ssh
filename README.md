@@ -42,7 +42,10 @@ $output = $connection->run('ls -la');
 $output = $connection->run(['ls -la', 'pwd']);
 
 // upload a file
-$output = $connection->putFile('test.txt', 'content of the file');
+$connection->putFile('test.txt');
+
+// create a file remotely
+$connection->putString('test.txt', 'content of the file);
 
 ```
 

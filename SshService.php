@@ -70,15 +70,17 @@ class SshService {
         return $this;
     }
 
+
     /**
      * @param string $file
-     * @param string $content
      * @return SshService
      * @throws Exception
      */
-    public function putFile(string $file, string $content): SshService {
+    public function putFile(string $file): SshService {
+        $fp = fopen($file, 'r');
         $this->connection('sftp')
-            ->put($file, $content, SFTP::SOURCE_LOCAL_FILE);
+            ->put($file, $fp, SFTP::SOURCE_LOCAL_FILE);
+        fclose($fp);
         return $this;
     }
 
